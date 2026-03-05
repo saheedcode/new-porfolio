@@ -1,8 +1,4 @@
 
-
-
-
-
     <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -78,10 +74,10 @@ overflow-x:hidden;
       <li><a href="#" class="hover:text-white">Home</a></li>
 
       
+      <li><button id="aboutBtnMobile" class="hover:text-white">About</button></li>
+    
       
-      <li><a href="#about" class="hover:text-white">About</a></li>
-      
-      <li><a href="#skills" class="hover:text-white">Skills</a></li>
+     
       
       <li><a href="work.html" target="_blank" class="hover:text-white">Projects</a></li>
       
@@ -145,6 +141,8 @@ alt="profile"
   
   </div>
   </div>
+
+ 
 
 
 <section id="contact" class="py-20 px-6">
@@ -249,27 +247,111 @@ once:true
   mobileMenu.classList.toggle("hidden");
   });
 
-
   
+
+document.addEventListener("DOMContentLoaded", ()=>{
+
 const aboutBtn = document.getElementById("aboutBtn");
+const aboutBtnMobile = document.getElementById("aboutBtnMobile");
+
 const aboutModal = document.getElementById("aboutModal");
 const closeAbout = document.getElementById("closeAbout");
 
+const mobileMenu = document.getElementById("mobile-menu");
+const menuBtn = document.getElementById("menu-btn");
+
+/* Desktop About */
+if(aboutBtn){
 aboutBtn.addEventListener("click", ()=>{
 aboutModal.classList.remove("hidden");
 });
+}
 
+/* Mobile About */
+if(aboutBtnMobile){
+aboutBtnMobile.addEventListener("click", ()=>{
+aboutModal.classList.remove("hidden");
+mobileMenu.classList.add("hidden");
+});
+}
+
+/* Close modal */
+if(closeAbout){
 closeAbout.addEventListener("click", ()=>{
 aboutModal.classList.add("hidden");
 });
+}
 
-// Close when clicking outside modal
+/* Click outside modal */
 aboutModal.addEventListener("click", (e)=>{
 if(e.target === aboutModal){
 aboutModal.classList.add("hidden");
 }
 });
 
+/* Mobile menu toggle */
+if(menuBtn){
+menuBtn.addEventListener("click", ()=>{
+mobileMenu.classList.toggle("hidden");
+});
+}
+
+});
+
+
+  
+
+
+
+
+
+
+
+//dom content
+document.addEventListener("DOMContentLoaded", ()=>{
+
+const aboutBtn = document.getElementById("aboutBtn");
+const aboutBtnMobile = document.getElementById("aboutBtnMobile");
+
+const aboutModal = document.getElementById("aboutModal");
+const closeAbout = document.getElementById("closeAbout");
+
+const mobileMenu = document.getElementById("mobile-menu");
+const menuBtn = document.getElementById("menu-btn");
+
+/* Desktop About */
+if(aboutBtn){
+aboutBtn.addEventListener("click", ()=>{
+aboutModal.classList.remove("hidden");
+});
+}
+
+/* Mobile About */
+if(aboutBtnMobile){
+aboutBtnMobile.addEventListener("click", ()=>{
+aboutModal.classList.remove("hidden");
+mobileMenu.classList.add("hidden");
+});
+}
+
+/* Close Modal */
+closeAbout.addEventListener("click", ()=>{
+aboutModal.classList.add("hidden");
+});
+
+/* Close when clicking outside */
+aboutModal.addEventListener("click", (e)=>{
+if(e.target === aboutModal){
+aboutModal.classList.add("hidden");
+}
+});
+
+/* Mobile menu toggle */
+menuBtn.addEventListener("click", ()=>{
+mobileMenu.classList.toggle("hidden");
+});
+
+});
 
 
   </script>
