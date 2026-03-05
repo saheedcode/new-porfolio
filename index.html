@@ -52,9 +52,10 @@ overflow-x:hidden;
       
       <li><a href="#" class="hover:text-white">Home</a></li>
       
-      <li><a href="#about" class="hover:text-white">About</a></li>
+      <li><button id="aboutBtn" class="hover:text-white">About</button></li>
+  
       
-      <li><a href="#skills" class="hover:text-white">Skills</a></li>
+    
       
       <li><a href="work.html" target="_blank" class="hover:text-white">Projects</a></li>
       
@@ -75,6 +76,8 @@ overflow-x:hidden;
       <ul class="flex flex-col text-center py-6 space-y-6 text-gray-300">
       
       <li><a href="#" class="hover:text-white">Home</a></li>
+
+      
       
       <li><a href="#about" class="hover:text-white">About</a></li>
       
@@ -119,20 +122,29 @@ alt="profile"
 
 </section>
 
-<!-- ABOUT -->
-<section class="py-20 px-6 text-center max-w-4xl mx-auto">
 
-<h2 data-aos="fade-right" class="text-4xl font-bold mb-6">
-About Me
-</h2>
 
-<p data-aos="fade-left" class="text-gray-400 leading-relaxed">
-I am a passionate frontend developer who enjoys building beautiful
-and responsive websites using modern technologies like
-HTML, CSS, Tailwind CSS and JavaScript.
-</p>
+<!-- ABOUT MODAL -->
+<div id="aboutModal" class="hidden fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-50 px-4">
 
-</section>
+  <div class="bg-gray-900 p-8 rounded-xl max-w-lg w-full relative animate-float">
+  
+  <!-- Close Button -->
+  <button id="closeAbout"
+  class="absolute top-4 right-4 text-white text-2xl">
+  ×
+  </button>
+  
+  <h2 class="text-3xl font-bold mb-6 text-center">About Me</h2>
+  
+  <p class="text-gray-400 leading-relaxed text-center">
+  I am a passionate frontend developer who enjoys building beautiful
+  and responsive websites using modern technologies like HTML, CSS,
+  Tailwind CSS and JavaScript.
+  </p>
+  
+  </div>
+  </div>
 
 
 <section id="contact" class="py-20 px-6">
@@ -207,11 +219,12 @@ My Skills
   
   <div class="flex justify-center gap-6 mt-4">
   
-  <a href="#">GitHub</a>
+  <a href="https://github.com/saheedcode">GitHub</a>
   
-  <a href="#">LinkedIn</a>
+  <a href="https://www.facebook.com/PrinceSaheedAdeitan" target="_blank">
+    facebook</a>
   
-  <a href="#">Twitter</a>
+  <a href="https://wa.me/08120323342" target="_blank">WhatsApp</a>
   
   </div>
   
@@ -235,6 +248,30 @@ once:true
   menuBtn.addEventListener("click", () => {
   mobileMenu.classList.toggle("hidden");
   });
+
+
+  
+const aboutBtn = document.getElementById("aboutBtn");
+const aboutModal = document.getElementById("aboutModal");
+const closeAbout = document.getElementById("closeAbout");
+
+aboutBtn.addEventListener("click", ()=>{
+aboutModal.classList.remove("hidden");
+});
+
+closeAbout.addEventListener("click", ()=>{
+aboutModal.classList.add("hidden");
+});
+
+// Close when clicking outside modal
+aboutModal.addEventListener("click", (e)=>{
+if(e.target === aboutModal){
+aboutModal.classList.add("hidden");
+}
+});
+
+
+
   </script>
 </body>
 </html>
