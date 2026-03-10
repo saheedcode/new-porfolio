@@ -22,7 +22,23 @@
 animation: float 4s ease-in-out infinite;
 }
 
+@keyframes popup {
+0%{
+transform: scale(0);
+opacity: 0;
+}
+60%{
+transform: scale(1.2);
+opacity: 1;
+}
+100%{
+transform: scale(1);
+}
+}
 
+.animate-popup{
+animation: popup 0.6s ease-out;
+}
 
 html,body{
 overflow-x:hidden;
@@ -35,7 +51,8 @@ overflow-x:hidden;
 
 <!-- WhatsApp Floating Button -->
 <a href="https://wa.me/08120323342" target="_blank"
-class="fixed z-50 bottom-6 right-6 bg-green-500 p-3 rounded-full shadow-lg hover:bg-green-600 transition">
+class="fixed z-50 bottom-6 right-6 bg-green-500 p-3 rounded-full shadow-lg  animate-popup
+ transition duration-300 ease-in-out transform scale-210 hover:bg-green-600">
 
 <svg xmlns="http://www.w3.org/2000/svg" 
 width="28" height="28" fill="white" viewBox="0 0 24 24">
